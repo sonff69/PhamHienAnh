@@ -6,7 +6,7 @@
     <title>Phạm Hiền Anh - Digital Portfolio</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Plus Jakarta Sans (Hỗ trợ tiếng Việt tốt) & Comfortaa -->
+    <!-- Google Fonts: Plus Jakarta Sans (Hỗ trợ tiếng Việt hoàn hảo) & Comfortaa -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
             background-blend-mode: overlay;
         }
 
-        /* Hiệu ứng kính mờ (Glassmorphism) bóng bẩy */
+        /* Hiệu ứng kính mờ (Glassmorphism) cực kỳ bóng bẩy */
         .glass-panel {
             background: rgba(255, 255, 255, 0.48);
             backdrop-filter: blur(16px);
@@ -61,11 +61,7 @@
             box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4), inset 0 2px 4px rgba(255, 255, 255, 0.75);
         }
 
-        .aero-glow {
-            text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
-        }
-
-        /* Canvas bong bóng nước nền */
+        /* Bong bóng nước nền */
         #bubble-canvas {
             position: fixed;
             top: 0;
@@ -122,11 +118,12 @@
                 </div>
             </div>
             
+            <!-- Chuyển sang JS scroll để tránh lỗi 404 mỏ neo -->
             <div class="hidden lg:flex items-center gap-8 font-medium text-sky-950 text-xs">
-                <a href="#about" class="hover:text-sky-500 transition-colors">Giới thiệu</a>
-                <a href="#goals" class="hover:text-sky-500 transition-colors">Mục tiêu Portfolio</a>
-                <a href="#projects" class="hover:text-sky-500 transition-colors">Báo cáo dự án</a>
-                <a href="#summary" class="hover:text-sky-500 transition-colors">Tổng kết thực tế</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('about')" class="hover:text-sky-500 transition-colors">Giới thiệu</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('goals')" class="hover:text-sky-500 transition-colors">Mục tiêu Portfolio</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('projects')" class="hover:text-sky-500 transition-colors">Báo cáo dự án</a>
+                <a href="javascript:void(0)" onclick="scrollToSection('summary')" class="hover:text-sky-500 transition-colors">Tổng kết thực tế</a>
             </div>
 
             <div>
@@ -277,12 +274,12 @@
             <!-- Hệ thống Tab 6 bài tập -->
             <div class="glass-panel rounded-[2.5rem] p-4 md:p-6 border-white/70">
                 <div class="flex flex-wrap gap-2 justify-center border-b border-sky-100 pb-4 mb-6">
-                    <button onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300 active bg-sky-200/60 shadow-inner">Bài tập 1</button>
-                    <button onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 2</button>
-                    <button onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 3</button>
-                    <button onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 4</button>
-                    <button onclick="switchTab('tab5')" id="btn-tab5" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 5</button>
-                    <button onclick="switchTab('tab6')" id="btn-tab6" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 6</button>
+                    <button type="button" onclick="switchTab('tab1')" id="btn-tab1" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300 active bg-sky-200/60 shadow-inner">Bài tập 1</button>
+                    <button type="button" onclick="switchTab('tab2')" id="btn-tab2" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 2</button>
+                    <button type="button" onclick="switchTab('tab3')" id="btn-tab3" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 3</button>
+                    <button type="button" onclick="switchTab('tab4')" id="btn-tab4" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 4</button>
+                    <button type="button" onclick="switchTab('tab5')" id="btn-tab5" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 5</button>
+                    <button type="button" onclick="switchTab('tab6')" id="btn-tab6" class="tab-btn px-4 py-2 rounded-full text-xs md:text-sm font-bold text-sky-900 hover:bg-white/40 transition-all duration-300">Bài tập 6</button>
                 </div>
 
                 <!-- Tab 1: Máy tính & Thiết bị ngoại vi -->
@@ -334,9 +331,9 @@
                                 </div>
                                 
                                 <div class="flex items-center justify-between mt-6 pt-4 border-t border-sky-100/50">
-                                    <button onclick="prevStep()" class="px-3.5 py-1.5 rounded-full bg-white/60 hover:bg-white text-xs font-bold text-sky-950 shadow-sm transition-colors">Trước đó</button>
+                                    <button type="button" onclick="prevStep()" class="px-3.5 py-1.5 rounded-full bg-white/60 hover:bg-white text-xs font-bold text-sky-950 shadow-sm transition-colors">Trước đó</button>
                                     <div class="flex gap-1.5" id="step-dots"></div>
-                                    <button onclick="nextStep()" class="px-3.5 py-1.5 rounded-full bg-sky-200/50 hover:bg-sky-200 text-xs font-bold text-sky-950 shadow-sm transition-colors">Kế tiếp</button>
+                                    <button type="button" onclick="nextStep()" class="px-3.5 py-1.5 rounded-full bg-sky-200/50 hover:bg-sky-200 text-xs font-bold text-sky-950 shadow-sm transition-colors">Kế tiếp</button>
                                 </div>
                             </div>
                         </div>
@@ -492,9 +489,9 @@
                             
                             <!-- Sidebar selector for 3 tasks -->
                             <div class="lg:col-span-3 flex flex-col gap-2">
-                                <button onclick="selectPromptTask('prompt-t1')" id="btn-prompt-t1" class="prompt-task-btn p-3 rounded-xl text-left text-xs font-bold bg-sky-100/50 hover:bg-sky-200/50 transition-colors active border border-sky-200">Tác vụ 1: Tóm tắt bài đọc</button>
-                                <button onclick="selectPromptTask('prompt-t2')" id="btn-prompt-t2" class="prompt-task-btn p-3 rounded-xl text-left text-xs font-bold bg-white/20 hover:bg-sky-100/30 transition-colors">Tác vụ 2: Giải thích khái niệm</button>
-                                <button onclick="selectPromptTask('prompt-t3')" id="btn-prompt-t3" class="prompt-task-btn p-3 rounded-xl text-left text-xs font-bold bg-white/20 hover:bg-sky-100/30 transition-colors">Tác vụ 3: Tạo bộ câu hỏi</button>
+                                <button type="button" onclick="selectPromptTask('prompt-t1')" id="btn-prompt-t1" class="prompt-task-btn p-3 rounded-xl text-left text-xs font-bold bg-sky-100/50 hover:bg-sky-200/50 transition-colors active border border-sky-200">Tác vụ 1: Tóm tắt bài đọc</button>
+                                <button type="button" onclick="selectPromptTask('prompt-t2')" id="btn-prompt-t2" class="prompt-task-btn p-3 rounded-xl text-left text-xs font-bold bg-white/20 hover:bg-sky-100/30 transition-colors">Tác vụ 2: Giải thích khái niệm</button>
+                                <button type="button" onclick="selectPromptTask('prompt-t3')" id="btn-prompt-t3" class="prompt-task-btn p-3 rounded-xl text-left text-xs font-bold bg-white/20 hover:bg-sky-100/30 transition-colors">Tác vụ 3: Tạo bộ câu hỏi</button>
                             </div>
 
                             <!-- Content display block -->
@@ -541,7 +538,7 @@
                                         </div>
                                         <div class="p-3 bg-emerald-100/40 rounded-xl border border-emerald-200">
                                             <strong class="text-emerald-950 block font-bold mb-1">Prompt Nâng cao (Cấu trúc Feynman + Chain-of-Thought + Few-Shot):</strong>
-                                            <p class="font-mono text-slate-800 leading-relaxed">"<strong>[Role]:</strong> Bạn là một Giảng viên Công nghệ thông tin xuất sắc, nổi tiếng với phương pháp giảng dạy 'Feynman' - đơn giản hóa mọi điều phức tạp. <br><strong>[Task]:</strong> Hãy giải thích bản chất của thuật toán mã hóa bất đối xứng RSA. <br><strong>[Style & Methodology (Chain-of-Thought)]:</strong> <br>- Bước 1: Phát biểu định nghĩa cốt lõi dưới 2 câu. <br>- Bước 2: Sử dụng hình ảnh ẩn dụ (Chiếc hòm và 2 chìa khóa). Phân tích cơ chế hoạt động dựa trên ẩn dụ này. <br>- Bước 3: Phân tích từng bước logic tại sao nó an toàn (bản chất toán học nhân hai số nguyên tố lớn). <br><strong>[Few-Shot Example]:</strong> <br>[User]: Giải thích 'Blockchain'. <br>[AI]: (1) Cốt lõi: Sổ cái kỹ thuật số phi tập trung. (2) Ẩn dụ: Cuốn sổ kế toán chung được phát cho mọi người trong làng. (3) Logic: Bảo mật đến từ sự đồng thuận đám đông. <br>Giờ hãy áp dụng quy trình trên giải thích 'Mã hóa RSA'."</p>
+                                            <p class="font-mono text-slate-800 leading-relaxed">"<strong>[Role]:</strong> Bạn là một Giảng viên Công nghệ thông tin xuất sắc, nổi tiếng with phương pháp giảng dạy 'Feynman' - đơn giản hóa mọi điều phức tạp. <br><strong>[Task]:</strong> Hãy giải thích bản chất của thuật toán mã hóa bất đối xứng RSA. <br><strong>[Style & Methodology (Chain-of-Thought)]:</strong> <br>- Bước 1: Phát biểu định nghĩa cốt lõi dưới 2 câu. <br>- Bước 2: Sử dụng hình ảnh ẩn dụ (Chiếc hòm và 2 chìa khóa). Phân tích cơ chế hoạt động dựa trên ẩn dụ này. <br>- Bước 3: Phân tích từng bước logic tại sao nó an toàn (bản chất toán học nhân hai số nguyên tố lớn). <br><strong>[Few-Shot Example]:</strong> <br>[User]: Giải thích 'Blockchain'. <br>[AI]: (1) Cốt lõi: Sổ cái kỹ thuật số phi tập trung. (2) Ẩn dụ: Cuốn sổ kế toán chung được phát cho mọi người trong làng. (3) Logic: Bảo mật đến từ sự đồng thuận đám đông. <br>Giờ hãy áp dụng quy trình trên giải thích 'Mã hóa RSA'."</p>
                                         </div>
                                     </div>
                                 </div>
@@ -556,7 +553,7 @@
                                     <div class="space-y-3">
                                         <div class="p-3 bg-red-100/40 rounded-xl border border-red-200">
                                             <strong class="text-red-950 block font-bold mb-1">Prompt Cơ bản:</strong>
-                                            <p class="font-mono text-slate-800 leading-relaxed">"Tóm tắt lại văn bản dưới đây cho tôi. Văn bản: [Dán đoạn văn bản về mạng Neural nhân tạo]"</p>
+                                            <p class="font-mono text-slate-800 leading-relaxed">"Tạo cho tôi 5 câu hỏi trắc nghiệm về môn Hệ điều hành."</p>
                                         </div>
                                         <div class="p-3 bg-amber-100/40 rounded-xl border border-amber-200">
                                             <strong class="text-amber-950 block font-bold mb-1">Prompt Cải tiến:</strong>
@@ -871,6 +868,14 @@
 
     <!-- Script điều hướng tương tác -->
     <script>
+        // Hệ thống điều hướng JS mượt mà thay mỏ neo, chống 404 tuyệt đối
+        function scrollToSection(id) {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
         // 12 Bước thực hành của Bài tập 1
         const bt1Steps = [
             {
@@ -953,9 +958,11 @@
 
         function renderStepDots() {
             const dotsContainer = document.getElementById('step-dots');
+            if (!dotsContainer) return;
             dotsContainer.innerHTML = '';
             bt1Steps.forEach((_, idx) => {
                 const dot = document.createElement('button');
+                dot.type = 'button'; // Explicit type
                 dot.onclick = () => jumpToStep(idx);
                 dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${idx === currentBt1Step ? 'bg-teal-600 px-3' : 'bg-sky-300'}`;
                 dotsContainer.appendChild(dot);
@@ -970,8 +977,14 @@
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'bg-sky-200/60', 'shadow-inner'));
 
-            document.getElementById(tabId).classList.add('active');
-            document.getElementById(`btn-${tabId}`).classList.add('active', 'bg-sky-200/60', 'shadow-inner');
+            const targetTab = document.getElementById(tabId);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+            const targetBtn = document.getElementById(`btn-${tabId}`);
+            if (targetBtn) {
+                targetBtn.classList.add('active', 'bg-sky-200/60', 'shadow-inner');
+            }
         }
 
         // Chuyển đổi giữa các prompt của bài tập 3
@@ -983,76 +996,83 @@
             document.querySelectorAll('.prompt-task-btn').forEach(btn => btn.classList.remove('active', 'bg-sky-100/50', 'border', 'border-sky-200'));
 
             const target = document.getElementById(taskId);
-            target.classList.remove('hidden');
-            target.classList.add('active');
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('active');
+            }
             
-            document.getElementById(`btn-${taskId}`).classList.add('active', 'bg-sky-100/50', 'border', 'border-sky-200');
+            const targetBtn = document.getElementById(`btn-${taskId}`);
+            if (targetBtn) {
+                targetBtn.classList.add('active', 'bg-sky-100/50', 'border', 'border-sky-200');
+            }
         }
 
         // Bong bóng nước nền bằng canvas
         const canvas = document.getElementById('bubble-canvas');
-        const ctx = canvas.getContext('2d');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
 
-        let particlesArray = [];
-        const numberOfParticles = 30;
+            let particlesArray = [];
+            const numberOfParticles = 30;
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        class Bubble {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height + canvas.height;
-                this.radius = Math.random() * 14 + 4;
-                this.speedX = Math.random() * 0.4 - 0.2;
-                this.speedY = -(Math.random() * 0.6 + 0.2);
-                this.opacity = Math.random() * 0.25 + 0.1;
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
             }
-            update() {
-                this.x += this.speedX;
-                this.y += this.speedY;
-                if (this.y < -this.radius) {
-                    this.y = canvas.height + this.radius;
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class Bubble {
+                constructor() {
                     this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height + canvas.height;
+                    this.radius = Math.random() * 14 + 4;
+                    this.speedX = Math.random() * 0.4 - 0.2;
+                    this.speedY = -(Math.random() * 0.6 + 0.2);
+                    this.opacity = Math.random() * 0.25 + 0.1;
+                }
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    if (this.y < -this.radius) {
+                        this.y = canvas.height + this.radius;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.15})`;
+                    ctx.lineWidth = 1.2;
+                    ctx.fill();
+                    ctx.stroke();
+
+                    // Điểm phản chiếu ánh sáng đặc trưng của Frutiger Aero
+                    ctx.beginPath();
+                    ctx.arc(this.x - this.radius/3, this.y - this.radius/3, this.radius/3.5, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
+                    ctx.fill();
                 }
             }
-            draw() {
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(56, 189, 248, ${this.opacity})`;
-                ctx.strokeStyle = `rgba(255, 255, 255, ${this.opacity + 0.15})`;
-                ctx.lineWidth = 1.2;
-                ctx.fill();
-                ctx.stroke();
 
-                // Điểm phản chiếu ánh sáng đặc trưng của Frutiger Aero
-                ctx.beginPath();
-                ctx.arc(this.x - this.radius/3, this.y - this.radius/3, this.radius/3.5, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity + 0.2})`;
-                ctx.fill();
+            function init() {
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particlesArray.push(new Bubble());
+                }
             }
-        }
+            init();
 
-        function init() {
-            for (let i = 0; i < numberOfParticles; i++) {
-                particlesArray.push(new Bubble());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                    particlesArray[i].draw();
+                }
+                requestAnimationFrame(animate);
             }
+            animate();
         }
-        init();
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = 0; i < particlesArray.length; i++) {
-                particlesArray[i].update();
-                particlesArray[i].draw();
-            }
-            requestAnimationFrame(animate);
-        }
-        animate();
     </script>
 </body>
 </html>
